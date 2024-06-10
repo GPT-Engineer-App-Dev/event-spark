@@ -1,19 +1,33 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+const Header = () => (
+  <Box as="header" bg="brand.800" color="white" py={4} px={8}>
+    <Heading as="h1" size="lg">Event Management Platform</Heading>
+  </Box>
+);
+
+const Footer = () => (
+  <Box as="footer" bg="brand.800" color="white" py={4} px={8} mt="auto">
+    <Text>&copy; 2023 Event Management Platform. All rights reserved.</Text>
+  </Box>
+);
+
+const MainContent = () => (
+  <Container maxW="container.md" py={8}>
+    <VStack spacing={4}>
+      <Heading as="h2" size="md">Upcoming Events</Heading>
+      <Text>No events available. Please check back later.</Text>
+    </VStack>
+  </Container>
+);
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Flex direction="column" minH="100vh">
+      <Header />
+      <MainContent />
+      <Footer />
+    </Flex>
   );
 };
 
